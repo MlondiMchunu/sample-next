@@ -1,3 +1,7 @@
-export default function Home(){
-    return <h1>Hi Next.js</h1>
+import type { NextPage } from "next";
+
+const Hello: NextPage = () => {
+    return (<>Hello World!</>);
 }
+
+export default Hello;
