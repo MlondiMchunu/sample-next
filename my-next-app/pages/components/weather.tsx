@@ -11,7 +11,7 @@ const PageComponentWeather: NextPage = () => {
 
     const [count, setCount] = useState(0);
 
-    const WeatherComponent = (props:WeatherProps) => {
+    const WeatherComponent = (props: WeatherProps) => {
         useEffect(() => {
             setCount(1);
         }, []);
