@@ -6,8 +6,12 @@ const PageComponentWeather: NextPage = () => {
     interface WeatherProps {
         weather: string;
     }
-    const WeatherComponent = (props: WeatherProps) => {
-        const [count, setCount] = useState(0);
+
+    var weath: string = "Cloudy"
+
+    const [count, setCount] = useState(0);
+
+    const WeatherComponent = (props:WeatherProps) => {
         useEffect(() => {
             setCount(1);
         }, []);
@@ -19,7 +23,7 @@ const PageComponentWeather: NextPage = () => {
             </h1>
         );
     };
-    return (<WeatherComponent weather="sunny" />);
+    return (<WeatherComponent weather={weath} />);
 };
 
 export default PageComponentWeather;
