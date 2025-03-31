@@ -9,7 +9,8 @@ const Hi: NextPage = () => {
                 <meta property="og:title" content="Hello World" key="title" />
             </Head>
             <>Hello World!</>
-        </div>)
+        </div>
+    );
 };
 
 export default Hi;
