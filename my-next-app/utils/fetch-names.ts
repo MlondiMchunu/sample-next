@@ -6,4 +6,12 @@ type responseItemType = {
 export const fetchNames = async () => {
     const url = "https://www.usemodernfullstack.dev/api/v1/users";
     let data: responseItemType[] | [] = [];
+    let names: responseItemType[] | [];
+
+    try {
+        const response = await fetch(url);
+        data = (await response.json()) as responseItemType[];
+    }catch(err){
+        names = [];
+    }
 }
