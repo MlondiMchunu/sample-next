@@ -11,7 +11,11 @@ export const fetchNames = async () => {
     try {
         const response = await fetch(url);
         data = (await response.json()) as responseItemType[];
-    }catch(err){
+    } catch (err) {
         names = [];
     }
+    names = data.map((item) => {
+        return { id: item.id, name: item.name }
+    });
+    return names;
 }
