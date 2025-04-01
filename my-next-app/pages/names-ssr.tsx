@@ -22,9 +22,15 @@ const NamesSSR: NextPage = (props: InferGetServerSidePropsType<typeof getServerS
             </li>
         );
     });
-    return(
+    return (
         <ul>
             {output}
         </ul>
-    )
+    );
+};
+
+export const getServerSideProps: GetServerSideProps = async (
+    context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>
+) => {
+let names: responseItemType[] | [] = [];
 }
