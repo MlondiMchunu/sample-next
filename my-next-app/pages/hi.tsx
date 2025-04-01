@@ -16,7 +16,7 @@ const Hi: NextPage = () => {
                 <a href="https://#"> external link</a>
                 and the Link component for an <br/>
                 <Link href="./components/weather">internal page</Link>
-                <Image src="vercel.svg" alt="Vercel Logo" width={72} height={16}I/>
+                <Image src="vercel.svg" alt="Vercel Logo" width={72} height={16}/>
             
             </div>
         </div>
