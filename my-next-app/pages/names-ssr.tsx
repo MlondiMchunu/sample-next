@@ -20,6 +20,11 @@ const NamesSSR: NextPage = (props: InferGetServerSidePropsType<typeof getServerS
             <li key={`name-${idx}`}>
                 {item.id}:{item.name}
             </li>
-        )
-    })
+        );
+    });
+    return(
+        <ul>
+            {output}
+        </ul>
+    )
 }
