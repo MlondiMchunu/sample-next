@@ -32,5 +32,15 @@ const NamesSSR: NextPage = (props: InferGetServerSidePropsType<typeof getServerS
 export const getServerSideProps: GetServerSideProps = async (
     context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>
 ) => {
-let names: responseItemType[] | [] = [];
-}
+    let names: responseItemType[] | [] = [];
+    try {
+        names = await fetchNames();
+    } catch (err) { }
+    return {
+        props: {
+            names
+        }
+    };
+
+};
+export default NamesSSR;
