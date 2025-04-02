@@ -25,7 +25,7 @@ const NamesCSR: NextPage = () => {
         fetchData();
     });
 
-    const output = data?.map((item: responseItemType, idx: number){
+    const output = data?.map((item: responseItemType, idx: number) => {
         return (
             <li key={`name-${idx}`}>
                 {item.id} : {item.name}
