@@ -15,11 +15,13 @@ type responseItemType = {
     name: string;
 };
 
+
+/**Create the page */
 const NamesSSR: NextPage = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     const output = props.names.map((item: responseItemType, idx: number) => {
         return (
             <li key={`name-${idx}`}>
-                {item.id}:{item.name}
+                {item.id} : {item.name}
             </li>
         );
     });
@@ -44,4 +46,6 @@ export const getServerSideProps: GetServerSideProps = async (
     };
 
 };
+
+
 export default NamesSSR;
