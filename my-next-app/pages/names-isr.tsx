@@ -28,3 +28,9 @@ const NamesSSG: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
         </ul>
     );
 };
+
+export const getStaticProps: GetStaticProps = async (
+    context: GetStaticPropsContext<ParsedUrlQuery, PreviewData>
+)=>{
+    let names: responseItemType[] | [] = [];
+}
