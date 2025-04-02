@@ -5,9 +5,10 @@ import type {
     NextPage,
     PreviewData
 } from "next";
+
 import { ParsedUrlQuery } from "querystring";
 import { fetchNames } from "../utils/fetch-names";
-import { getServerSideProps } from "next/dist/build/templates/pages";
+//import { getServerSideProps } from "next/dist/build/templates/pages";
 
 type responseItemType = {
     id: string;
