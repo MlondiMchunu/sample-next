@@ -33,12 +33,12 @@ export const getStaticProps: GetStaticProps = async (
     context: GetStaticPropsContext<ParsedUrlQuery, PreviewData>
 ) => {
     let names: responseItemType[] | [] = [];
-    try{
+    try {
         names = await fetchNames();
-    }catch(err){}
-    return{
-        props:{
-            
+    } catch (err) { }
+    return {
+        props: {
+            names
         }
-    }
-}
+    };
+};
