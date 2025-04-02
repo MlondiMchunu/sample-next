@@ -38,7 +38,10 @@ export const getStaticProps: GetStaticProps = async (
     } catch (err) { }
     return {
         props: {
-            names
+            names,
+            revalidate: 30
         }
-    };
+    }
 };
+
+export default NamesSSG;
