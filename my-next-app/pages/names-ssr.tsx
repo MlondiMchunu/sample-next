@@ -32,6 +32,8 @@ const NamesSSR: NextPage = (props: InferGetServerSidePropsType<typeof getServerS
     );
 };
 
+/**get data from the api 
+ * & return the created dataset from the async function and pas it to the NextPage*/
 export const getServerSideProps: GetServerSideProps = async (
     context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>
 ) => {
