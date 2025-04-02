@@ -17,9 +17,27 @@ const NamesCSR: NextPage = () => {
             let names;
             try {
                 names = await fetchNames();
-            }catch(err){
-                console.log("ERR",err);
+            } catch (err) {
+                console.log("ERR", err);
             }
-        }
-    })
-}
+            setData(names);
+        };
+        fetchData();
+    });
+
+    const output = data?.map((item: responseItemType, idx: number){
+        return (
+            <li key={`name-${idx}`}>
+                {item.id} : {item.name}
+            </li>
+        );
+    });
+
+    return (
+        <ul>
+            {output}
+        </ul>
+    );
+};
+
+export default NamesCSR;
