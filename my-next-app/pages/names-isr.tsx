@@ -31,6 +31,14 @@ const NamesSSG: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
 
 export const getStaticProps: GetStaticProps = async (
     context: GetStaticPropsContext<ParsedUrlQuery, PreviewData>
-)=>{
+) => {
     let names: responseItemType[] | [] = [];
+    try{
+        names = await fetchNames();
+    }catch(err){}
+    return{
+        props:{
+            
+        }
+    }
 }
