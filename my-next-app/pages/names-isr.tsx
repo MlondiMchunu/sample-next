@@ -6,10 +6,20 @@ import type {
     PreviewData
 } from "next";
 
-import {ParsedUrlQuery} from "querystring";
-import {fetchNames} from "../utils/fetch-names";
+import { ParsedUrlQuery } from "querystring";
+import { fetchNames } from "../utils/fetch-names";
 
 type responseItemType = {
-    id:string,
-    name:string
+    id: string,
+    name: string
 };
+
+const NamesSSG: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const output = props.names.map((item: responseItemType, idx: number) => {
+return(
+    <li key={`name-${idx}`}>
+        {item.id} : {item.name}
+    </li>
+)
+    })
+}
