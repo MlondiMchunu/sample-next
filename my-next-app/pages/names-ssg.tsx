@@ -12,12 +12,35 @@ type responseItemType = {
     name: string,
 };
 
+/*create page */
 const NamesSSG: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const output = props.names.map((item: responseItemType, idx: number) => {
         return (
             <li key={`name-${idx}`}>
                 {item.id} : {item.name}
             </li>
-        )
-    })
-}
+        );
+    });
+
+    return (
+        <ul>
+            {output}
+        </ul>
+    );
+};
+
+export const getStaticProps: GetStaticProps = async (
+    context: GetStaticPropsContext<ParsedUrlQuery, PreviewData>
+) => {
+    let names: responseItemType[] | [] = [];
+    try {
+        names = await fetchNames();
+    } catch (err) { }
+    return {
+        props: {
+            names
+        }
+    };
+};
+
+export default NamesSSG;
