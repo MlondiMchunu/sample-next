@@ -15,7 +15,7 @@ const Hi: NextPage = () => {
                 Use the HTML anchor for an
                 <a href="https://#"> external link</a>
                 and the Link component for an <br />
-                <Link href="/components/weather"><a>internal page</a></Link>
+                <Link href="/components/weather">internal page</Link>
                 <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
 
             </div>
