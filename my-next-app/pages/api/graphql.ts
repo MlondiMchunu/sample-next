@@ -9,3 +9,5 @@ const server = new ApolloServer({
     resolvers,
     typeDefs
 });
+
+const handler = startServerAndCreateNextHandler(server);
