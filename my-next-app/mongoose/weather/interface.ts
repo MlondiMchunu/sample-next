@@ -1,4 +1,4 @@
-export declare interface WeatherINterface {
+export declare interface WeatherInterface {
     zip: string;
     weather: string;
     tempC: string;
