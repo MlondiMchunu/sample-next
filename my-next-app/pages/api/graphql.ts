@@ -3,7 +3,7 @@ import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import { resolvers } from "../../graphql/resolvers";
 import { typeDefs } from "../../graphql/schema";
 import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
-import { dbConnect, dbDisconnect } from "@/middleware/db-connect";
+import { dbConnect} from "@/middleware/db-connect";
 
 //@ts-ignore
 const server = new ApolloServer({
@@ -28,10 +28,15 @@ const allowCors = (fn: NextApiHandler) => async (req: NextApiRequest, res: NextA
 
 const connectDB = (fn: NextApiHandler) => {
     async (req: NextApiRequest, res: NextApiResponse) => {
-        await dbConnect();
-        return await fn(req, res);
+        try {
+            await dbConnect();
+            return await fn(req, res);
+        }
+        catch (error) {
+            console.error("Database connection error:", error);
+            res.status(500).json({ error: "Database connection failed" });
+        }
     };
-}
 
 export default connectDB(allowCors(handler));
 //export default allowCors(handler);
