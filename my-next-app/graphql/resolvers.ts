@@ -16,12 +16,15 @@ export const resolvers = {
         weather: async (_: any, param: WeatherInterface) => {
             let data = await findByZip(param.zip);
             return [data];
-           // return [db.find((item) => item.zip === param.zip)];
+            // return [db.find((item) => item.zip === param.zip)];
         }
     },
     Mutation: {
         weather: async (_: any, param: { data: WeatherInterface }) => {
-            return [db.find((item) => item.zip === param.data.zip)];
+            // return [db.find((item) => item.zip === param.data.zip)];
+            await updateByZip(param.data.zip, param.data)
+            let data = await findByZip(param.data.zip);
+            return [data];
         }
     }
 };
