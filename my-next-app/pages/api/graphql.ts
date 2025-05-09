@@ -34,7 +34,12 @@ const connectDB = (fn: NextApiHandler) => async (req: NextApiRequest, res: NextA
     } catch (error) {
         console.error("Database connection error:", error);
         res.status(500).json({ error: "Database connection failed" });
-    } 
+    }
+    finally {
+        if (connection) {
+            await dbDisconnect(); // Make sure you export this from db-connect
+        }
+    }
 };
 
 export default connectDB(allowCors(handler));
