@@ -36,12 +36,12 @@ export async function updateByZip(
 }
 
 export async function deleteByZip(
-    paramZip:string
-):Promise<boolean>{
-    try{
-        await WeatherModel.deleteOne({zip:paramZip});
+    paramZip: string
+): Promise<boolean> {
+    try {
+        await WeatherModel.deleteOne({ zip: paramZip });
         return true;
-    }catch(err){
+    } catch (err) {
         console.log(err);
     }
     return false;
