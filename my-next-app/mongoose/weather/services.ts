@@ -20,3 +20,17 @@ export async function findByZip(
         console.log(err)
     } return []
 }
+
+
+export async function updateByZip(
+    paramZip: string,
+    newData: WeatherInterface
+): Promise<boolean> {
+    try {
+        await WeatherModel.updateOne({ zip: paramZip }, newData);
+        return true;
+    } catch (err) {
+        console.log(err);
+    }
+    return false;
+}
