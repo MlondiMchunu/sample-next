@@ -26,4 +26,12 @@ const allowCors = (fn: NextApiHandler) => async (req: NextApiRequest, res: NextA
     return await fn(req, res);
 };
 
-export default allowCors(handler);
+const connectDB = (fn: NextApiHandler) => {
+    async (req: NextApiRequest, res: NextApiResponse) => {
+        await dbConnect();
+        return await fn(req, res);
+    };
+}
+
+export default connectDB(allowCors(handler));
+//export default allowCors(handler);
