@@ -3,6 +3,7 @@ import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import { resolvers } from "../../graphql/resolvers";
 import { typeDefs } from "../../graphql/schema";
 import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
+import { dbConnect, dbDisconnect } from "@/middleware/db-connect";
 
 //@ts-ignore
 const server = new ApolloServer({
