@@ -9,3 +9,14 @@ export async function storeDocument(doc: WeatherInterface): Promise<boolean> {
     }
     return true
 }
+
+
+export async function findByZip(
+    paramZip: String
+): Promise<Array<WeatherInterface> | null> {
+    try {
+        return await WeatherModel.findOne({ zip: paramZip });
+    } catch (err) {
+        console.log(err)
+    } return []
+}
