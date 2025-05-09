@@ -1,12 +1,15 @@
 import { db } from "./data";
+import { WeatherInterface } from "@/mongoose/weather/interface";
+import { findByZip, updateByZip } from "@/mongoose/weather/services";
 
-declare interface WeatherInterface {
+
+/*declare interface WeatherInterface {
     zip: string;
     weather: string;
     tempC: string;
     tempF: string;
     friends: string[];
-}
+}*/
 
 export const resolvers = {
     Query: {
