@@ -3,7 +3,7 @@ import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import { resolvers } from "../../graphql/resolvers";
 import { typeDefs } from "../../graphql/schema";
 import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
-import { dbConnect} from "@/middleware/db-connect";
+import { dbConnect } from "@/middleware/db-connect";
 
 //@ts-ignore
 const server = new ApolloServer({
@@ -37,6 +37,6 @@ const connectDB = (fn: NextApiHandler) => {
             res.status(500).json({ error: "Database connection failed" });
         }
     };
-
+}
 export default connectDB(allowCors(handler));
 //export default allowCors(handler);
