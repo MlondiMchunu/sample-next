@@ -4,7 +4,7 @@ import { storeDocument } from "../mongoose/weather/services";
 
 let mongoServer: MongoMemoryServer;
 
-export async function dbConnect() {
+ export async function dbConnect() {
   try {
     // 1. Create in-memory MongoDB instance with proper options
     mongoServer = await MongoMemoryServer.create({
@@ -79,7 +79,7 @@ async function seedTestData() {
   }
 }
 
-export async function dbDisconnect() {
+ export async function dbDisconnect() {
   try {
     await mongoose.disconnect();
     if (mongoServer) {
@@ -90,4 +90,3 @@ export async function dbDisconnect() {
   }
 }
 
-//export default dbConnect;
