@@ -14,7 +14,9 @@ import { findByZip, updateByZip } from "@/mongoose/weather/services";
 export const resolvers = {
     Query: {
         weather: async (_: any, param: WeatherInterface) => {
-            return [db.find((item) => item.zip === param.zip)];
+            let data = await findByZip(param.zip);
+            return [data];
+           // return [db.find((item) => item.zip === param.zip)];
         }
     },
     Mutation: {
