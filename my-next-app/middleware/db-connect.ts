@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { MongoMemoryServer } from "mongodb-memory-server";
+import {storeDocument} from "../mongoose/weather/services";
 
 async function dbConnect(): Promise<any | String> {
     const mongoServer = await MongoMemoryServer.create();
