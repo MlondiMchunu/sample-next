@@ -3,5 +3,5 @@ export declare interface WeatherInterface {
     weather: string;
     tempC: string;
     tempF: string;
-    friends: [string,string];
+    friends: string[];
 };

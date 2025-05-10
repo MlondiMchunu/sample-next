@@ -73,6 +73,16 @@ async function seedTestData() {
       tempF: "86F",
       friends: ["96815", "96814"]
     });
+
+    await storeDocument({
+      zip: "96820",
+      weather: "Cloudy",
+      tempC: "25C",
+      tempF: "76F",
+      friends: ["96815", "96814"]
+    });
+
+
   } catch (error) {
     console.error("Error seeding test data:", error);
     throw error;

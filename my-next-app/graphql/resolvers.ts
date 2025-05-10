@@ -1,4 +1,4 @@
-import { db } from "./data";
+//import { db } from "./data";
 import { WeatherInterface } from "@/mongoose/weather/interface";
 import { findByZip, updateByZip } from "@/mongoose/weather/services";
 
