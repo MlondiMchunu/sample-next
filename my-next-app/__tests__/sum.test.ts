@@ -16,7 +16,7 @@ describe("the sum function", () => {//describe function creates test suit
         //let expectation = -4;
 
         //let result = sum(first, second);
-        expect([-8,4]).toBe(-4);
+        expect(sum([-8,4])).toBe(-4);
     });
 
 });
