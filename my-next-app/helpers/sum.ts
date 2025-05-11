@@ -1,3 +1,4 @@
-export const sum = (a: number, b: number): number => {
-    return a + b;
+export const sum = (data: number[]): number => {
+
+    return data[0] + data[1];
 };
