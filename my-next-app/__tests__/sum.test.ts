@@ -7,7 +7,7 @@ describe("the sum function", () => {//describe function creates test suit
         //let expectation = 4;
 
         //let result = sum(first, second);
-        expect(sum([2,2])).toBe(4);
+        expect(sum([2, 2])).toBe(4);
     });
 
     test("minus eight plus four is minus four", () => {
@@ -16,7 +16,7 @@ describe("the sum function", () => {//describe function creates test suit
         //let expectation = -4;
 
         //let result = sum(first, second);
-        expect(sum([-8,4])).toBe(-4);
+        expect(sum([-8, 4])).toBe(-4);
     });
 
 });
