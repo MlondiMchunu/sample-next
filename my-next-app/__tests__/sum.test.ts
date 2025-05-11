@@ -7,6 +7,7 @@ describe("the sum function", () => {//describe function creates test suit
         let expectation = 4;
 
         let result = sum(first, second);
+        expect(result).toBe(expectation);
     });
 
     test("minus eight plus four is minus four", () => {
@@ -15,6 +16,7 @@ describe("the sum function", () => {//describe function creates test suit
         let expectation = -4;
 
         let result = sum(first, second);
+        expect(result).toBe(expectation);
     });
 
 });
