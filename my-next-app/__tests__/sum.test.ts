@@ -7,4 +7,10 @@ describe("the sum function", () => {
         let expectation = 4;
     });
 
+    test("minus eight plus four is minus four", () => {
+        let first = -8;
+        let second = 4;
+        let expectation = -4;
+    });
+
 });
