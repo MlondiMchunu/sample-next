@@ -19,4 +19,8 @@ describe("the sum function", () => {//describe function creates test suit
         expect(sum([-8, 4])).toBe(-4);
     });
 
+    test("two plus two plus minus four is zero", () => {
+        expect(sum([2, 2, -4])).toBe(0);
+    });
+
 });
