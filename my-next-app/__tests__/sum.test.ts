@@ -1,5 +1,4 @@
 import { sum } from "../helpers/sum";
-
 describe("the sum function", () => {//describe function creates test suit
     test("two plus two is four", () => {
         //let first = 2;
